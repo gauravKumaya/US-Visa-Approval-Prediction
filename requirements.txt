@@ -1,6 +1,21 @@
+ipykernel
 numpy
 pandas
 matplotlib
 seaborn
+scipy
+plotly
 scikit-learn
+imblearn
+xgboost
+catboost
+pymongo
+from_root
+evidently==0.7.10
+dill
+pyYAML
+neuro_mf
+boto3
 
+setuptools
+-e .
