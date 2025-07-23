@@ -16,6 +16,7 @@ dill
 pyYAML
 neuro_mf
 boto3
+python-box
 
 setuptools
 -e .

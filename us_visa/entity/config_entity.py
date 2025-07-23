@@ -23,3 +23,8 @@ class DataIngestionConfig:
     train_test_split_ration: float = DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
     collection_name: str = COLLECTION_NAME
 
+
+@dataclass
+class DataValidationConfig:
+    data_validation_dir: str = os.path.join(TrainingPipelineConfig.artifact_dir, DATA_VALIDATION_DIR)
+    

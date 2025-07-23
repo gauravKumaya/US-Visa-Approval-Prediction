@@ -1,6 +1,7 @@
 notebook
 artifact
 logs
+visa
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

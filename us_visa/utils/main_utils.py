@@ -4,6 +4,7 @@ import sys
 import numpy as np
 import dill
 import yaml
+from box import Box
 from pandas import DataFrame
 
 from us_visa.exception import USvisaException
@@ -11,7 +12,14 @@ from us_visa.logger import logging
 
 
 
-def read_yaml(file_path: str) -> dict:
+def read_yaml(file_path: str) -> Box:
+    """
+    Method Name: read yaml
+    Description: reads yaml file 
+
+    Args: path to the yaml file
+    Return Box datatype
+    """
     logging.info("Entered the read_yaml method of utils")
 
     try:
@@ -19,8 +27,7 @@ def read_yaml(file_path: str) -> dict:
 
             logging.info("Exited the read_yaml method of utils")
 
-            return yaml.safe_load(yaml_file)
-        
+            return Box(yaml.safe_load(yaml_file))
     except Exception as e:
         raise USvisaException(e, sys) from e
     
