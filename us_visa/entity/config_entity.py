@@ -26,5 +26,17 @@ class DataIngestionConfig:
 
 @dataclass
 class DataValidationConfig:
-    data_validation_dir: str = os.path.join(TrainingPipelineConfig.artifact_dir, DATA_VALIDATION_DIR)
+    data_validation_dir: str = os.path.join(TrainingPipelineConfig.artifact_dir, DATA_VALIDATION_DIR_NAME)
     
+@dataclass
+class DataTransfomationConfig: 
+    data_transformation_dir: str = os.path.join(TrainingPipelineConfig.artifact_dir, DATA_TARNSFORMATION_DIR_NAME)
+    transformed_train_file_path: str = os.path.join(data_transformation_dir, 
+                                                    DATA_TRANSFORMATION_TRANSFORMED_DIR, 
+                                                    TRAIN_FILE_NAME.replace('csv', 'npy'))
+    transformed_test_file_path: str = os.path.join(data_transformation_dir,
+                                                   DATA_TRANSFORMATION_TRANSFORMED_DIR,
+                                                   TEST_FILE_NAME.replace('csv', 'npy'))
+    transformed_object_file_path: str = os.path.join(data_transformation_dir,
+                                                     DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
+                                                     PREPROCESSING_OBJECT_FILE_NAME)

@@ -55,7 +55,7 @@ def save_object(file_path: str, content: object) -> None:
         with open(file_path, 'wb') as file_obj:
             dill.dump(content, file_obj)
         
-        logging("Exited the save_object method of utils")
+        logging.info("Exited the save_object method of utils")
 
     except Exception as e:
         raise USvisaException(e, sys) from e
@@ -123,3 +123,13 @@ def drop_columns(df: DataFrame, cols: list) -> DataFrame:
     df: pandas DataFrame
     cols: list of columns to be dropped
     '''
+
+    logging.info("Entered the drop_columns method of utils")
+
+    try:
+        df = df.drop(columns=cols, axis=1)
+        
+        logging.info("Exited the drop_columns method of utils")
+        return df
+    except Exception as e:
+        raise USvisaException(e, sys) from e
